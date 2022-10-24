@@ -18,6 +18,12 @@ for(let card of cardList) {
     let img = document.createElement('img'); //Skaber en div
     img.src = card.picture;
     gameboard.append(img); //Prepend - Før div. Append - Efter div
-
 }
-console.log(GoalModel());
+// console.log(GoalModel());
+
+
+function cardFlip() {
+    
+}
+
+cardFlip()
