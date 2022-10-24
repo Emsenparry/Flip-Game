@@ -1,8 +1,8 @@
 import { GoalModel } from "./model.js"
 
 const gameboard = document.getElementById('gameboard');
-const numCards = 5;
-let cardList = GoalModel()
+const numCards = 20; //Vælg hvor mange 
+let cardList = GoalModel() //Vores array fra model.js
 //Randomizer arrayets goals
 cardList.sort(() => Math.random() - 0.5);
 cardList = cardList.slice(0, numCards)
@@ -13,8 +13,11 @@ cardList.sort(() => Math.random() - 0.5);
 for(let card of cardList) { 
     let div = document.createElement('div'); //Skaber en div
     div.innerText = card.goal
-    div.innerHTML = card.picture
-    gameboard.append(div) //Prepend - Før div. Append - Efter div
+    gameboard.append(div); //Prepend - Før div. Append - Efter div
+    
+    let img = document.createElement('img');
+    img.src = card.picture;
+    gameboard.append(img);
 }
 
-console.log(GoalModel().slice(15));
+console.log(GoalModel());
