@@ -12,13 +12,25 @@ cardList = cardList.slice(0, numCards)
 cardList = cardList.concat(cardList);
 cardList.sort(() => Math.random() - 0.12);
 
-for(let card of cardList) { 
-    let div = document.createElement('div');
-    
-    let img = document.createElement('img'); //Skaber en div
-    img.src = card.picture;
-    div.appendChild(img); //Prepend - Før div. Append - Efter div
+for(let card of cardList) {
 
-    gameboard.appendChild(div)
+    gameboard.innerHTML += `
+    <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="${cardList[index].picture}" alt="${cardList[index].title}">
+    </div>
+    <div class="flip-card-back">
+      
+    </div>
+  </div>`
+
+    // let div = document.createElement('div');
+    
+    // let img = document.createElement('img'); //Skaber en div
+    // img.src = card.picture;
+    // div.appendChild(img); //Prepend - Før div. Append - Efter div
+
+    // gameboard.appendChild(div)
 }
 // console.log(GoalModel());
+
