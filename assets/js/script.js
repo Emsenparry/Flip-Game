@@ -45,17 +45,20 @@ for(let card of cardList){
 } 
 
 function flipCard(divElm){
+  // Hvis lock er true, så skal flipCard vente på at timeout er færdig, ellers så forsæt med funktionen.
   if(lock === true){
     return;
   }
   divElm.classList.add('active');
-  arr_flipped.push(divElm);
+  arr_flipped.push(divElm); //In charge of remembering which cards are flipped
 
   if(arr_flipped.length === 2){
+    // Now handling pairs, unlock the function
     lock = true;
-    if(arr_flipped[0].innerHTML === arr_flipped[1].innerHTML) {
+    if(arr_flipped[0].innerHTML === arr_flipped[1].innerHTML) { //Checks if the 2 cards are the same card
       pairs++
       arr_flipped.length = 0;
+      // Done handling pairs, unlock the function
       lock = false;
     } else{
       setTimeout(() => {
@@ -63,6 +66,7 @@ function flipCard(divElm){
           item.classList.remove('active');
         }
         arr_flipped.length = 0;
+        // Done handling pairs, unlock the function
         lock = false;
       }, 1000);
     }
