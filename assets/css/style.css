@@ -1,52 +1,41 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-* img {
-  width: 100%;
+h1 {
+  font-family: sans-serif;
+  text-transform: uppercase;
 }
 
 #gameboard {
   display: grid;
+  grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: 1fr;
-  gap: 0.5em;
-}
-
-.flip-box-inner {
+  grid-gap: 0.5em;
+  perspective: 1000px;
+  height: 100vh;
   aspect-ratio: 1/1;
+}
+#gameboard div {
   position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
 }
-
-.flip-box .flip-box-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-box-front {
+#gameboard div div, #gameboard div img {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background-color: #bbb;
-  color: black;
 }
-
-.flip-box-back {
-  position: absolute;
+#gameboard div img {
+  pointer-events: none;
+  cursor: pointer;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
 }
-.flip-box-back img {
-  width: 100%;
+#gameboard div .flip-card-front {
+  transform: rotateX(180deg);
+}
+#gameboard div .flip-card-back {
   height: 100%;
+  width: 100%;
+  background-image: url("/assets/images/bg.jpg");
+  cursor: pointer;
+}
+#gameboard div.active {
+  transform: rotateX(-180deg);
 }/*# sourceMappingURL=style.css.map */
