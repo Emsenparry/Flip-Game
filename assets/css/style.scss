@@ -28,6 +28,7 @@ div {
     position: relative;
     transition: transform 0.6s;
     transform-style: preserve-3d;
+    border-radius: 10px;
     div, img {
       position: absolute;
       backface-visibility: hidden;
@@ -40,10 +41,12 @@ div {
     }
     .flip-card-front {
       transform: rotateX(180deg);
+      border-radius: 10px;
     }
     .flip-card-back {
       height: 100%;
       width: 100%;
+      border-radius: 10px;
       background-image: url("/assets/images/bg.jpg");
       cursor: pointer;
     }
