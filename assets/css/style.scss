@@ -4,6 +4,9 @@ body{
   box-sizing: border-box;
   background-image: url(/assets/images/3840751.jpg);
   font-family: sans-serif;
+  position: absolute;
+  width: 100%;
+  backdrop-filter: blur(3px);
 }
 
 h1{
